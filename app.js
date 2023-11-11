@@ -3,6 +3,8 @@
 const express = require("express");
 const app = express();
 
+//llamamos nuestros archivos de rutas
+const mainRoutes = require('./src/routes/mainRoutes.js')
 //aca pongo los arch estaticos
 app.use(express.static('public'))
 
@@ -16,7 +18,15 @@ app.get('/',(req,res)=>{res.send('Hola express')});
 app.get('/nosotros',(req,res)=>{
    res.sendFile(__dirname+ "./nosotros.html"); 
 })*/
- //el purto que siempre esta escuchando
+
+//el purto que siempre esta escuchando
+
 const PORT =3000;
-app.listen(PORT,()=> console.log(`http://localhost:${PORT}`));
+app.listen(PORT,()=> console.log(`Servidor corriendo en http://localhost:${PORT}`));
+
+//exportando modulos
+
+module.exports=router;
+
+
 
